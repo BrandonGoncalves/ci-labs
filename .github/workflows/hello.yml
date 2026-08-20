@@ -1,0 +1,21 @@
+name: Hello CI # Friendly name in GitHub UI
+
+on: # WHEN should workflow run
+  push: # Run every time code is pushed
+    branches: [main] # To the main branch
+
+jobs: # WHAT should workflow run
+  greet: # Job name (We can choose this)
+    runs-on: ubuntu-latest # Run on Github- hosted ubuntu virtual machine
+    steps: # Individual commands to run, in order
+      - name: Say hello
+        run: echo "Hello from GitHub Actions!"
+      
+      - name: Show the date
+        run: date
+      
+      - name: Show the runner OS
+        run: uname -a
+      
+      - name: List files in the repo
+        run: ls -la
